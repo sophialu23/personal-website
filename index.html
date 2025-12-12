@@ -3,41 +3,940 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Personal Website</title>
+  <title>Sophia Lu's Portfolio</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="alternate icon" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>Hello, I'm Sophia 👋</h1>
-    <nav>
-      <a href="#about">About</a> | 
-      <a href="#projects">Projects</a> | 
-      <a href="#contact">Contact</a>
+  <div class="min-h-screen relative">
+    <!-- Floating Elements -->
+    <div id="floating-elements" class="floating-elements"></div>
+
+    <!-- Navigation -->
+    <nav class="navigation">
+      <div class="nav-container">
+        <div class="nav-brand">
+          <div class="nav-avatar">SL</div>
+          <span class="nav-name">Sophia Lu</span>
+        </div>
+        <div class="nav-tabs">
+          <button class="nav-tab active" data-tab="home">
+            <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+            <span>Home</span>
+          </button>
+          <button class="nav-tab" data-tab="experience">
+            <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+            <span>Experience</span>
+          </button>
+          <button class="nav-tab" data-tab="projects">
+            <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+            <span>Projects</span>
+          </button>
+          <button class="nav-tab" data-tab="resume">
+            <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+            <span>Resume</span>
+          </button>
+        </div>
+      </div>
     </nav>
-  </header>
 
-  <section id="about">
-    <h2>About Me</h2>
-    <p>I’m a Systems Design Engineering student passionate about design, coding, and skating!</p>
+    <main class="main-content relative z-10">
+      <!-- Home Page -->
+      <div id="page-home" class="page active">
+        <!-- Hero Section -->
+        <section class="hero-section">
+          <div class="hero-background">
+            <div class="hero-blob blob-1"></div>
+            <div class="hero-blob blob-2"></div>
+            <div class="hero-blob blob-3"></div>
+          </div>
+          <div class="hero-content">
+            <div class="hero-main">
+              <div class="hero-left">
+                <div class="typing-animation">
+                  <span id="typing-text"></span><span class="typing-cursor">|</span>
+                </div>
+                <h1 class="hero-title">Sophia Lu</h1>
+                <p class="hero-subtitle">Systems Design Engineering Student</p>
+                <p class="hero-description">
+                  Passionate about design, coding, and social impact! I love creating innovative solutions and bringing ideas to life through technology and design.
+                </p>
+              </div>
+              <div class="hero-collage-desktop">
+                <div class="image-collage">
+                  <div class="collage-item collage-item-1 tilted-left">
+                    <div class="photo-frame">
+                      <img src="images/collage1.jpg" alt="Collage Image 1" onerror="this.style.display='none'">
+                    </div>
+                  </div>
+                  <div class="collage-item collage-item-2 tilted-right">
+                    <div class="photo-frame">
+                      <img src="images/collage2.jpg" alt="Collage Image 2" onerror="this.style.display='none'">
+                    </div>
+                  </div>
+                  <div class="collage-item collage-item-3 tilted-left">
+                    <div class="photo-frame">
+                      <img src="images/collage3.jpg" alt="Collage Image 3" onerror="this.style.display='none'">
+                    </div>
+                  </div>
+                  <div class="collage-item collage-item-4 tilted-right">
+                    <div class="photo-frame">
+                      <img src="images/collage4.jpg" alt="Collage Image 4" onerror="this.style.display='none'">
+                    </div>
+                  </div>
+                  <div class="collage-item collage-item-5 tilted-left">
+                    <div class="photo-frame">
+                      <img src="images/collage5.jpg" alt="Collage Image 5" onerror="this.style.display='none'">
+                    </div>
+                  </div>
+                  <div class="collage-item collage-item-6 tilted-right">
+                    <div class="photo-frame">
+                      <img src="images/collage6.jpg" alt="Collage Image 6" onerror="this.style.display='none'">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="hero-collage-mobile">
+              <div class="image-collage">
+                <div class="collage-item collage-item-1 tilted-left">
+                  <div class="photo-frame">
+                    <img src="images/collage1.jpg" alt="Collage Image 1" onerror="this.style.display='none'">
+                  </div>
+                </div>
+                <div class="collage-item collage-item-2 tilted-right">
+                  <div class="photo-frame">
+                    <img src="images/collage2.jpg" alt="Collage Image 2" onerror="this.style.display='none'">
+                  </div>
+                </div>
+                <div class="collage-item collage-item-3 tilted-left">
+                  <div class="photo-frame">
+                    <img src="images/collage3.jpg" alt="Collage Image 3" onerror="this.style.display='none'">
+                  </div>
+                </div>
+                <div class="collage-item collage-item-4 tilted-right">
+                  <div class="photo-frame">
+                    <img src="images/collage4.jpg" alt="Collage Image 4" onerror="this.style.display='none'">
+                  </div>
+                </div>
+                <div class="collage-item collage-item-5 tilted-left">
+                  <div class="photo-frame">
+                    <img src="images/collage5.jpg" alt="Collage Image 5" onerror="this.style.display='none'">
+                  </div>
+                </div>
+                <div class="collage-item collage-item-6 tilted-right">
+                  <div class="photo-frame">
+                    <img src="images/collage6.jpg" alt="Collage Image 6" onerror="this.style.display='none'">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="hero-buttons">
+              <button class="btn btn-primary" onclick="switchTab('projects')">
+                View My Work
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </button>
+              <button class="btn btn-outline" onclick="switchTab('resume')">
+                Download Resume
+              </button>
+            </div>
+            <div class="hero-social">
+              <a href="mailto:s58lu@uwaterloo.ca" class="social-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              </a>
+              <a href="https://github.com/sophialu23" class="social-icon" target="_blank" rel="noopener noreferrer">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+              </a>
+              <a href="https://www.linkedin.com/in/sophialu222/" class="social-icon" target="_blank" rel="noopener noreferrer">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+              </a>
+              <a href="https://x.com/sophia_lu23" class="social-icon" target="_blank" rel="noopener noreferrer">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="about-section">
+          <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-grid">
+              <div class="about-card">
+                <h3>Background</h3>
+                <p>Systems Design Engineering student passionate about creating innovative solutions and bringing ideas to life through technology and design.</p>
+              </div>
+              <div class="about-card">
+                <h3>Hobbies</h3>
+                <p>I love music, hanging out with friends, and playing sports. I'm also on the varsity figure skating team ;0.</p>
+              </div>
+              <div class="about-card">
+                <h3>Passions</h3>
+                <p>Constantly learning new technologies and design trends. Currently exploring AI integration and web experiences.</p>
+              </div>
+            </div>
+          </div>
   </section>
 
-  <section id="projects">
-    <h2>Projects</h2>
-    <ul>
-      <li><strong>HobbyHive:</strong> A hobby-connecting platform.</li>
-      <li><strong>SkateBot:</strong> AI figure skating coach.</li>
+        <!-- Skills Section -->
+        <section class="skills-section">
+          <div class="container">
+            <h2 class="section-title">Skills & Expertise</h2>
+            <div class="skills-grid">
+              <div class="skill-card">
+                <h3>Frontend</h3>
+                <ul>
+                  <li><span class="skill-dot"></span>React</li>
+                  <li><span class="skill-dot"></span>TypeScript</li>
+                  <li><span class="skill-dot"></span>Tailwind CSS</li>
+                  <li><span class="skill-dot"></span>HTML</li>
+                  <li><span class="skill-dot"></span>JavaScript</li>
+                </ul>
+              </div>
+              <div class="skill-card">
+                <h3>Backend</h3>
+                <ul>
+                  <li><span class="skill-dot"></span>Node.js</li>
+                  <li><span class="skill-dot"></span>Python</li>
+                  <li><span class="skill-dot"></span>SQL</li>
+                  <li><span class="skill-dot"></span>APIs</li>
+                </ul>
+              </div>
+              <div class="skill-card">
+                <h3>Design</h3>
+                <ul>
+                  <li><span class="skill-dot"></span>Figma</li>
+                  <li><span class="skill-dot"></span>Adobe XD</li>
+                  <li><span class="skill-dot"></span>Photoshop</li>
+                  <li><span class="skill-dot"></span>Canva</li>
+                </ul>
+              </div>
+              <div class="skill-card">
+                <h3>Tools</h3>
+                <ul>
+                  <li><span class="skill-dot"></span>Git</li>
+                  <li><span class="skill-dot"></span>AWS</li>
+                  <li><span class="skill-dot"></span>Excel</li>
+                  <li><span class="skill-dot"></span>Solidworks</li>
+                </ul>
+              </div>
+              <div class="skill-card">
+                <h3>Soft Skills</h3>
+                <ul>
+                  <li><span class="skill-dot"></span>Team Leadership</li>
+                  <li><span class="skill-dot"></span>Curious</li>
+                  <li><span class="skill-dot"></span>Communicative</li>
+                  <li><span class="skill-dot"></span>Problem Solving</li>
+                  <li><span class="skill-dot"></span>Innovative</li>
+                </ul>
+              </div>
+              <div class="skill-card">
+                <h3>Currently Learning</h3>
+                <ul>
+                  <li><span class="skill-dot"></span>PyTorch</li>
+                  <li><span class="skill-dot"></span>AI/ML</li>
+                  <li><span class="skill-dot"></span>Rust</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- Experience Page -->
+      <div id="page-experience" class="page">
+        <div class="page-container">
+          <div class="page-header">
+            <h1 class="page-title"><span id="typing-experience"></span><span class="typing-cursor">|</span></h1>
+            <p class="page-subtitle">A journey of continuous learning and growth...</p>
+          </div>
+
+          <!-- Work Experience -->
+          <section class="experience-section">
+            <h2 class="section-heading">Work Experience</h2>
+            <div class="experience-list">
+              <div class="experience-card">
+                <div class="experience-header">
+                  <div>
+                    <h3>Shopify Software Engineer</h3>
+                    <p class="company">Symmetry Commerce</p>
+                  </div>
+                  <div class="experience-meta">
+                    <div class="meta-item">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                      <span>Sept 2025 - Dec 2025</span>
+                    </div>
+                    <div class="meta-item">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                      <span>Toronto, ON (Remote)</span>
+                    </div>
+                  </div>
+                </div>
+                <p class="experience-description">I design and engineer Shopify experiences that power $7M+ businesses, automate workflows, and deliver faster, more scalable e-commerce solutions.</p>
+                <div class="achievements">
+                  <h4>Key Achievements:</h4>
+                  <ul>
+                    <li><span class="achievement-dot"></span>Delivered end-to-end Shopify customizations for merchants generating $7M+ annually, improving storefront performance, conversion, and operational efficiency.</li>
+                    <li><span class="achievement-dot"></span>Automated large-scale data migration pipelines for products, customers, and orders, eliminating 1,000+ hours of manual work for client teams.</li>
+                    <li><span class="achievement-dot"></span>Co-built and deployed an internal Shopify app that standardized workflows and reduced development time across projects by 20%.</li>
+                  </ul>
+                </div>
+                <div class="tech-tags">
+                  <span class="tech-tag">Liquid/ HTML</span>
+                  <span class="tech-tag">Tailwind CSS</span>
+                  <span class="tech-tag">SQL</span>
+                  <span class="tech-tag">JavaScript</span>
+                  <span class="tech-tag">Python</span>
+                </div>
+              </div>
+
+              <div class="experience-card">
+                <div class="experience-header">
+                  <div>
+                    <h3>Technical Project Manager</h3>
+                    <p class="company">napkin marketing</p>
+                  </div>
+                  <div class="experience-meta">
+                    <div class="meta-item">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                      <span>Jan 2025 - Apr 2022</span>
+                    </div>
+                    <div class="meta-item">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                      <span>Toronto, ON</span>
+                    </div>
+                  </div>
+                </div>
+                <p class="experience-description">Managed marketing projects end-to-end, delivered user-centered website designs, and improved team efficiency through clear communication and structured coordination..</p>
+                <div class="achievements">
+                  <h4>Key Achievements:</h4>
+                  <ul>
+                    <li><span class="achievement-dot"></span>Ensured 100% on-time project delivery by managing timelines, tasks, and workflows in Asana.</li>
+                    <li><span class="achievement-dot"></span>Designed engaging websites in Figma and Canva, increasing user engagement by 15% through strategic, user-first design.</li>
+                    <li><span class="achievement-dot"></span>Led cross-functional meetings that improved communication alignment and reduced project delays by 20%.</li>
+                  </ul>
+                </div>
+                <div class="tech-tags">
+                  <span class="tech-tag">Figma</span>
+                  <span class="tech-tag">Canva</span>
+                  <span class="tech-tag">HTML</span>
+                  <span class="tech-tag">Tailwind CSS</span>
+                  <span class="tech-tag">Asana</span>
+                </div>
+              </div>
+
+              <div class="experience-card">
+                <div class="experience-header">
+                  <div>
+                    <h3>Frontend Developer</h3>
+                    <p class="company">The Green Society</p>
+                  </div>
+                  <div class="experience-meta">
+                    <div class="meta-item">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                      <span>Sept 2024 - Apr 2025</span>
+                    </div>
+                    <div class="meta-item">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                      <span>Remote</span>
+                    </div>
+                  </div>
+                </div>
+                <p class="experience-description">Developed accessible, responsive, and user-focused web experiences for a global environmental non-profit while collaborating with an international team to deliver high-quality digital products.</p>
+                <div class="achievements">
+                  <h4>Key Achievements:</h4>
+                  <ul>
+                    <li><span class="achievement-dot"></span>Drove the full lifecycle of the organization’s main website, improving accessibility and expanding its ability to reach users worldwide.</li>
+                    <li><span class="achievement-dot"></span>Coordinated closely with 40+ teammates across multiple time zones to keep projects aligned, efficient, and moving toward shared milestones.</li>
+                    <li><span class="achievement-dot"></span>Built and optimized responsive, search-friendly web pages and UI prototypes, ensuring a cohesive brand experience across design and development.</li>
+                  </ul>
+                </div>
+                <div class="tech-tags">
+                  <span class="tech-tag">HTML</span>
+                  <span class="tech-tag">React</span>
+                  <span class="tech-tag">CSS</span>
+                  <span class="tech-tag">JavaScript</span>
+                </div>
+              </div>
+
+              <div class="experience-card">
+                <div class="experience-header">
+                  <div>
+                    <h3>Business Development Representative</h3>
+                    <p class="company">Series</p>
+                  </div>
+                  <div class="experience-meta">
+                    <div class="meta-item">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                      <span>Oct 2024 - Mar 2025</span>
+                    </div>
+                    <div class="meta-item">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                      <span>Waterloo, ON</span>
+                    </div>
+                  </div>
+                </div>
+                <p class="experience-description">Supported growth initiatives by expanding program reach, driving targeted outreach, and building strategic relationships with student communities and alumni networks.</p>
+                <div class="achievements">
+                  <h4>Key Achievements:</h4>
+                  <ul>
+                    <li><span class="achievement-dot"></span>Worked closely with the CEO and founding team—two Yale University students whose startup was featured in Forbes as one of the fastest-growing student-led ventures—to strengthen alumni and community relationships.</li>
+                    <li><span class="achievement-dot"></span>Helped recruit 10+ additional participants by engaging Ivy League alumni and executing targeted outreach strategies.</li>
+                    <li><span class="achievement-dot"></span>Drove marketing initiatives that introduced the program to 30+ students across diverse academic groups, increasing visibility and interest in the organization.</li>
     </ul>
+            </div>
   </section>
 
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:you@email.com">you@email.com</a></p>
-    <p>LinkedIn | GitHub</p>
+          <!-- Education -->
+          <section class="education-section">
+            <h2 class="section-heading">Education</h2>
+            <div class="experience-card">
+              <div class="experience-header">
+                <div>
+                  <h3>Bachelor of Science in Systems Design Engineering</h3>
+                  <p class="company">University of Waterloo</p>
+                </div>
+                <div class="experience-meta">
+                  <div class="meta-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                    <span>2024 - 2029</span>
+                  </div>
+                  <div class="meta-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                    <span>Waterloo, ON</span>
+                  </div>
+                </div>
+              </div>
+              <div class="education-honors">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
+                <span>Excellent Academic Standing</span>
+              </div>
+              <div class="activities">
+                <h4>Activities & Leadership:</h4>
+                <div class="activity-tags">
+                  <span class="activity-tag">Varsity Figure Skating Athlete</span>
+                  <span class="activity-tag">Class Representative for 100+ students</span>
+                  <span class="activity-tag">UW Product Management Outreach Director</span>
+                  <span class="activity-tag">Engineering Society Data Engineer</span>
+                </div>
+              </div>
+            </div>
   </section>
+        </div>
+      </div>
 
-  <footer>
-    <p>© 2025 Sophia Lu</p>
+      <!-- Projects Page -->
+      <div id="page-projects" class="page">
+        <div class="page-container">
+          <div class="page-header">
+            <h1 class="page-title"><span id="typing-projects"></span><span class="typing-cursor">|</span></h1>
+            <p class="page-subtitle">A showcase of my recent work and side projects</p>
+          </div>
+
+          <div class="projects-list">
+            <!-- Project 1 -->
+            <div class="project-card-large">
+              <div class="project-preview">
+                <div class="project-images">
+                  <div class="project-image-top">
+                    <img src="images/project1.jpg" alt="ELDA" class="project-image" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22300%22%3E%3Crect fill=%22%23fef5f8%22 width=%22300%22 height=%22300%22/%3E%3Ctext fill=%22%23e91e8c%22 font-family=%22Arial%22 font-size=%2218%22 x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dominant-baseline=%22middle%22%3EProject Image 1%3C/text%3E%3C/svg%3E'">
+                  </div>
+                  <div class="project-image-bottom">
+                    <img src="images/project1-2.jpg" alt="ELDA" class="project-image" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22300%22%3E%3Crect fill=%22%23fef5f8%22 width=%22300%22 height=%22300%22/%3E%3Ctext fill=%22%23e91e8c%22 font-family=%22Arial%22 font-size=%2218%22 x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dominant-baseline=%22middle%22%3EProject Image 2%3C/text%3E%3C/svg%3E'">
+                  </div>
+                </div>
+                <span class="project-category">Backend Developer/ Designer</span>
+                <div class="project-actions">
+                  <a href="https://github.com/sophialu23/ELDA" class="btn btn-sm btn-outline" target="_blank" rel="noopener noreferrer">Github</a>
+                </div>
+              </div>
+              <div class="project-details">
+                <h3>ELDA — Elderly Learning Digital Assistant</h3>
+                <p class="project-description">A real-time multimodal voice assistant that combines speech recognition, natural language reasoning, and dynamic voice output to enable fast and accurate hands-free interactions.</p>
+                <p class="project-long">Developed as a cross-platform Electron application with a React interface, ELDA demonstrates end-to-end system design—from low-latency audio processing to AI-driven decision-making and accessibility-focused UX. The system achieves 95% command accuracy across 50+ tested interactions, showcasing robust back-end engineering and seamless multimodal integration.</p>
+                <div class="project-metrics">
+                  <div class="metric">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                    <div class="metric-value">95%</div>
+                    <div class="metric-label">Command Accuracy</div>
+                  </div>
+                  <div class="metric">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
+                    <div class="metric-value">50+</div>
+                    <div class="metric-label">Tested Voice Interactions</div>
+                  </div>
+                  <div class="metric">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                    <div class="metric-value">Multi-Platform</div>
+                    <div class="metric-label">MacOS & Windows Support</div>
+                  </div>
+                </div>
+                <div class="project-features">
+                  <h4>Key Features:</h4>
+                  <div class="features-grid">
+                    <div class="feature-item"><span class="feature-dot"></span>Real-time speech recognition and intent parsing</div>
+                    <div class="feature-item"><span class="feature-dot"></span>AI-driven reasoning and dynamic voice responses</div>
+                    <div class="feature-item"><span class="feature-dot"></span>Accessibility-first interaction flow</div>
+                  </div>
+                </div>
+                <div class="tech-tags">
+                  <span class="tech-tag">React</span>
+                  <span class="tech-tag">Node.js</span>
+                  <span class="tech-tag">Electron</span>
+                  <span class="tech-tag">Python</span>
+                  <span class="tech-tag">Gemini API</span>
+                  <span class="tech-tag">ElevenLabs API</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="project-card-large">
+              <div class="project-preview">
+                <div class="project-images">
+                  <div class="project-image-top">
+                    <img src="images/project2.jpg" alt="UW reality labs" class="project-image" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22300%22%3E%3Crect fill=%22%23fef5f8%22 width=%22300%22 height=%22300%22/%3E%3Ctext fill=%22%23e91e8c%22 font-family=%22Arial%22 font-size=%2218%22 x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dominant-baseline=%22middle%22%3EProject Image 1%3C/text%3E%3C/svg%3E'">
+                  </div>
+                  <div class="project-image-bottom">
+                    <img src="images/project2-2.jpg" alt="UW reality labs" class="project-image" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22300%22%3E%3Crect fill=%22%23fef5f8%22 width=%22300%22 height=%22300%22/%3E%3Ctext fill=%22%23e91e8c%22 font-family=%22Arial%22 font-size=%2218%22 x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dominant-baseline=%22middle%22%3EProject Image 2%3C/text%3E%3C/svg%3E'">
+                  </div>
+                </div>
+                <span class="project-category">Software Engineer</span>
+                <div class="project-actions">
+                  <a href="https://github.com/uwrealitylabs/humanoid-server" class="btn btn-sm btn-outline" target="_blank" rel="noopener noreferrer">Github</a>
+                </div>
+              </div>
+              <div class="project-details">
+                <h3>Humanoid VR Robot — UW Reality Labs</h3>
+                <p class="project-description">A human-like robotic system designed to blend physical motion with immersive VR control, enabling natural, precise, and responsive full-body interaction between humans and machines..</p>
+                <p class="project-long">Built in collaboration with a 12-person engineering team, this prototype integrates advanced motion control, perception pipelines, and real-time sensor fusion. Through optimized embedded modules and control algorithms, the system achieved 30% higher movement precision and 25% lower latency, significantly improving real-time responsiveness.</p>
+                <div class="project-metrics">
+                  <div class="metric">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                    <div class="metric-value">30%</div>
+                    <div class="metric-label">Improved Motion Precision</div>
+                  </div>
+                  <div class="metric">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                    <div class="metric-value">12 Engineers</div>
+                    <div class="metric-label">Collaborative Team Effort</div>
+                  </div>
+                  <div class="metric">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
+                    <div class="metric-value">25%</div>
+                    <div class="metric-label">Reduced System Latency</div>
+                  </div>
+                </div>
+                <div class="project-features">
+                  <h4>Key Features:</h4>
+                  <div class="features-grid">
+                    <div class="feature-item"><span class="feature-dot"></span>Real-time motion control and trajectory optimization</div>
+                    <div class="feature-item"><span class="feature-dot"></span>VR-driven command and feedback loop</div>
+                    <div class="feature-item"><span class="feature-dot"></span>Embedded control modules for low-latency actuation</div>
+                    <div class="feature-item"><span class="feature-dot"></span>High-fidelity perception system enabling natural human–robot interaction</div>
+                  </div>
+                </div>
+                <div class="tech-tags">
+                  <span class="tech-tag">C++</span>
+                  <span class="tech-tag">Python</span>
+                  <span class="tech-tag">VR tooling</span>
+                  <span class="tech-tag">Embedded Systems</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Project 3 - Focus Royale -->
+            <div class="project-card-large">
+              <div class="project-preview">
+                <div class="project-images">
+                  <div class="project-image-top">
+                    <img src="images/project3.jpg" alt="FocusRoyale" class="project-image" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22300%22%3E%3Crect fill=%22%23fef5f8%22 width=%22300%22 height=%22300%22/%3E%3Ctext fill=%22%23e91e8c%22 font-family=%22Arial%22 font-size=%2218%22 x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dominant-baseline=%22middle%22%3EProject Image 1%3C/text%3E%3C/svg%3E'">
+                  </div>
+                  <div class="project-image-bottom">
+                    <img src="images/project3-2.jpg" alt="FocusRoyale" class="project-image" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22300%22%3E%3Crect fill=%22%23fef5f8%22 width=%22300%22 height=%22300%22/%3E%3Ctext fill=%22%23e91e8c%22 font-family=%22Arial%22 font-size=%2218%22 x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dominant-baseline=%22middle%22%3EProject Image 2%3C/text%3E%3C/svg%3E'">
+                  </div>
+                </div>
+                <span class="project-category">Full Stack</span>
+                <div class="project-actions">
+                  <a href="https://github.com/yourusername/hobbyhive" class="btn btn-sm btn-outline" target="_blank" rel="noopener noreferrer">Github</a>
+                </div>
+              </div>
+              <div class="project-details">
+                <h3>Focus Royale — Productivity Betting Web App</h3>
+                <p class="project-description">A crypto-powered productivity platform where users “bet on themselves” to stay focused. By staking tokens and locking in distraction-free sessions, Focus Royale motivates users through commitment, accountability, and real-time progress tracking.</p>
+                <p class="project-long">Built during a hackathon, the app integrates Solana for secure token transactions and Gemini for user authentication and account management. The system combines a Node.js backend with a React + Tailwind CSS frontend to deliver fast, sleek, and reliable user experiences across devices.</p>
+                <div class="project-metrics">
+                  <div class="metric">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                    <div class="metric-value">99.8%</div>
+                    <div class="metric-label">Uptime During Hackathon Demo</div>
+                  </div>
+                  <div class="metric">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
+                    <div class="metric-value">85%</div>
+                    <div class="metric-label">Successful Focus Session Completion Rate</div>
+                  </div>
+                  <div class="metric">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                    <div class="metric-value">3-Layer</div>
+                    <div class="metric-label">Backend Architecture (Auth, Sessions, Blockchain)</div>
+                  </div>
+                </div>
+                <div class="project-features">
+                  <h4>Key Features:</h4>
+                  <div class="features-grid">
+                    <div class="feature-item"><span class="feature-dot"></span>Token staking and time-based “focus lock-in” system</div>
+                    <div class="feature-item"><span class="feature-dot"></span>Solana blockchain integration for fast, low-cost transactions</div>
+                    <div class="feature-item"><span class="feature-dot"></span>Gemini API for secure authentication and wallet management</div>
+                    <div class="feature-item"><span class="feature-dot"></span>Responsive React UI built with Tailwind CSS</div>
+                    <div class="feature-item"><span class="feature-dot"></span>Node.js backend with scalable routing and session logic</div>
+                  </div>
+                </div>
+                <div class="tech-tags">
+                  <span class="tech-tag">React</span>
+                  <span class="tech-tag">Node.js</span>
+                  <span class="tech-tag">Gemini API</span>
+                  <span class="tech-tag">Solana API</span>
+                  <span class="tech-tag">JavaScript</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Project 4 - Data commisionner -->
+            <div class="project-card-large">
+              <div class="project-preview">
+                <div class="project-images">
+                  <div class="project-image-top">
+                    <img src="images/project7.jpg" alt="Data Commsionner" class="project-image" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22300%22%3E%3Crect fill=%22%23fef5f8%22 width=%22300%22 height=%22300%22/%3E%3Ctext fill=%22%23e91e8c%22 font-family=%22Arial%22 font-size=%2218%22 x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dominant-baseline=%22middle%22%3EProject Image 1%3C/text%3E%3C/svg%3E'">
+                  </div>
+                  <div class="project-image-bottom">
+                    <img src="images/project7-2.jpg" alt="Data Commsionner" class="project-image" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22300%22%3E%3Crect fill=%22%23fef5f8%22 width=%22300%22 height=%22300%22/%3E%3Ctext fill=%22%23e91e8c%22 font-family=%22Arial%22 font-size=%2218%22 x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dominant-baseline=%22middle%22%3EProject Image 2%3C/text%3E%3C/svg%3E'">
+                  </div>
+                  <div class="project-actions">
+                    <a href="https://github.com/uwengsoc/website-refresh" class="btn btn-sm btn-outline" target="_blank" rel="noopener noreferrer">Github</a>
+                  </div>
+                </div>
+                <span class="project-category">Front End Developer / Data Commissioner</span>
+              </div>
+              <div class="project-details">
+                <h3>Engineering Society — Data Commissioner & Web Developer</h3>
+                <p class="project-description">A dual-impact role combining data analytics and front-end development to support strategic decision-making and modernize digital experiences across the Engineering Society. This work bridges technical reporting, user-focused web design, and operational insights to elevate student engagement and organizational efficiency.</p>
+                <p class="project-long">By analyzing over 10,000+ data points and redesigning core web pages used by thousands of engineering students, the role enhances transparency, accessibility, and the overall digital ecosystem for the society.</p>
+                <div class="project-metrics">
+                  <div class="metric">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                    <div class="metric-value">2 Major Platforms</div>
+                    <div class="metric-label">Improved as Web Developer</div>
+                  </div>
+                  <div class="metric">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
+                    <div class="metric-value">10,000+</div>
+                    <div class="metric-label">Data Points Analyzed</div>
+                  </div>
+                  <div class="metric">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                    <div class="metric-value">30%</div>
+                    <div class="metric-label">Increase in Reporting Accuracy</div>
+                  </div>
+                </div>
+                <div class="project-features">
+                  <h4>Key Features:</h4>
+                  <div class="features-grid">
+                    <div class="feature-item"><span class="feature-dot"></span>Developed and maintained Engineering Society web pages, improving usability, accessibility, and visibility for key student resources and events.</div>
+                    <div class="feature-item"><span class="feature-dot"></span>Built interactive dashboards and visual reports that informed 5+ major strategic initiatives, influencing budgeting, marketing, and event planning.</div>
+                    <div class="feature-item"><span class="feature-dot"></span>Collected, cleaned, and analyzed large data sets on attendance, sales, and engagement to uncover trends and support data-driven decisions.</div>
+                    <div class="feature-item"><span class="feature-dot"></span>Streamlined reporting workflows and improved data accuracy by 30%, strengthening operational transparency for executive teams.</div>
+                  </div>
+                </div>
+                <div class="tech-tags">
+                  <span class="tech-tag">HTML</span>
+                  <span class="tech-tag">CSS</span>
+                  <span class="tech-tag">JavaScript</span>
+                  <span class="tech-tag">Excel</span>
+                  <span class="tech-tag">Analytics</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Project 4 - SkateBot -->
+            <div class="project-card-large">
+              <div class="project-preview">
+                <div class="project-images">
+                  <div class="project-image-top">
+                    <img src="images/project6.jpg" alt="SkateBot" class="project-image" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22300%22%3E%3Crect fill=%22%23fef5f8%22 width=%22300%22 height=%22300%22/%3E%3Ctext fill=%22%23e91e8c%22 font-family=%22Arial%22 font-size=%2218%22 x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dominant-baseline=%22middle%22%3EProject Image 1%3C/text%3E%3C/svg%3E'">
+                  </div>
+                  <div class="project-image-bottom">
+                    <img src="images/project6-2.jpg" alt="SkateBot" class="project-image" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22300%22%3E%3Crect fill=%22%23fef5f8%22 width=%22300%22 height=%22300%22/%3E%3Ctext fill=%22%23e91e8c%22 font-family=%22Arial%22 font-size=%2218%22 x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dominant-baseline=%22middle%22%3EProject Image 2%3C/text%3E%3C/svg%3E'">
+                  </div>
+                  <div class="project-actions">
+                    <a href="https://github.com/sophialu23/SkateBot" class="btn btn-sm btn-outline" target="_blank" rel="noopener noreferrer">Github</a>
+                  </div>
+                </div>
+                <span class="project-category">Full Stack</span>
+              </div>
+              <div class="project-details">
+                <h3>SkateBot AI — Personalized Figure Skating Coaching Assistant</h3>
+                <p class="project-description">An AI-powered coaching platform that helps figure skaters improve their technique by analyzing skills, identifying common mistakes, and delivering tailored training suggestions—all without needing an in-person coach.</p>
+                <p class="project-long">Designed to make skating more accessible, SkateBot AI supports skaters of all levels by translating complex coaching knowledge into simple, actionable feedback. Users can log skills, track progress, and receive personalized drills powered by domain-specific reasoning models.</p>
+                <div class="project-metrics">
+                  <div class="metric">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                    <div class="metric-value">AI-Powered</div>
+                    <div class="metric-label">Technique Feedback</div>
+                  </div>
+                  <div class="metric">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
+                    <div class="metric-value">10+</div>
+                    <div class="metric-label">Users Tested</div>
+                  </div>
+                  <div class="metric">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                    <div class="metric-value">92%</div>
+                    <div class="metric-label">Feedback Relevance Accuracy</div>
+                  </div>
+                </div>
+                <div class="project-features">
+                  <h4>Key Features:</h4>
+                  <div class="features-grid">
+                    <div class="feature-item"><span class="feature-dot"></span>Personalized feedback for jumps, spins, footwork, and edges</div>
+                    <div class="feature-item"><span class="feature-dot"></span>Drill and practice plan generation tailored to user skill level</div>
+                    <div class="feature-item"><span class="feature-dot"></span>Clean, intuitive UI designed for skaters of all ages</div>
+                    <div class="feature-item"><span class="feature-dot"></span>AI-driven reasoning engine trained on figure skating technique principles</div>
+                  </div>
+                </div>
+                <div class="tech-tags">
+                  <span class="tech-tag">Python</span>
+                  <span class="tech-tag">Prompt Engineering</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Project 3 - HobbyHive -->
+            <div class="project-card-large">
+              <div class="project-preview">
+                <div class="project-images">
+                  <div class="project-image-top">
+                    <img src="images/project4.jpg" alt="HobbyHive" class="project-image" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22300%22%3E%3Crect fill=%22%23fef5f8%22 width=%22300%22 height=%22300%22/%3E%3Ctext fill=%22%23e91e8c%22 font-family=%22Arial%22 font-size=%2218%22 x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dominant-baseline=%22middle%22%3EProject Image 1%3C/text%3E%3C/svg%3E'">
+                  </div>
+                  <div class="project-image-bottom">
+                    <img src="images/project4-2.jpg" alt="HobbyHive" class="project-image" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22300%22%3E%3Crect fill=%22%23fef5f8%22 width=%22300%22 height=%22300%22/%3E%3Ctext fill=%22%23e91e8c%22 font-family=%22Arial%22 font-size=%2218%22 x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dominant-baseline=%22middle%22%3EProject Image 2%3C/text%3E%3C/svg%3E'">
+                  </div>
+                </div>
+                <span class="project-category">Product Designer</span>
+                <div class="project-actions">
+                  <a href="https://www.figma.com/proto/DTgfteEb5StronHFPERbfv/Sophia-s-App?node-id=68-38&starting-point-node-id=68%3A38&t=WrmgAieAwsvMESM5-1" class="btn btn-sm btn-outline" target="_blank" rel="noopener noreferrer">Prototype</a>
+                </div>
+              </div>
+              <div class="project-details">
+                <h3>HobbyHive — Hobby Connecting App </h3>
+                <p class="project-description">A social platform that helps people start, grow, and stay committed to their hobbies by connecting them with beginner-friendly classes, local groups, and experienced community members. HobbyHive makes learning accessible by pairing structured guidance with real human support.</p>
+                <p class="project-long">Designed as a full-stack web app, HobbyHive allows users to explore curated hobby paths, track progress, book intro sessions, and engage with mentors or peers. The platform focuses on accessibility, motivation, and lowering the barrier to trying something new—whether that’s pottery, coding, skating, or photography.</p>
+                <div class="project-metrics">
+                  <div class="metric">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                    <div class="metric-value">Community</div>
+                    <div class="metric-label">Mentor + Peer Networking</div>
+                  </div>
+                  <div class="metric">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
+                    <div class="metric-value">500+</div>
+                    <div class="metric-label">Hobbies Categorized & Indexed</div>
+                  </div>
+                  <div class="metric">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                    <div class="metric-value">Beginner-Friendly</div>
+                    <div class="metric-label">Structured Starter Paths</div>
+                  </div>
+                </div>
+                <div class="project-features">
+                  <h4>Key Features:</h4>
+                  <div class="features-grid">
+                    <div class="feature-item"><span class="feature-dot"></span>Beginner-oriented lesson paths with guided next steps</div>
+                    <div class="feature-item"><span class="feature-dot"></span>Community networking with mentors and hobby groups</div>
+                    <div class="feature-item"><span class="feature-dot"></span>Personalized hobby recommendations based on interests</div>
+                    <div class="feature-item"><span class="feature-dot"></span>Progress tracking and motivational streak features</div>
+                    <div class="feature-item"><span class="feature-dot"></span>Modern, responsive UI designed for accessibilityg</div>
+                  </div>
+                </div>
+                <div class="tech-tags">
+                  <span class="tech-tag">Figma</span>
+                  <span class="tech-tag">Asana</span>
+                  <span class="tech-tag">UX feedback</span>
+                  <span class="tech-tag">UI design</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Project 5 - Hair Salon App Redesign -->
+            <div class="project-card-large">
+              <div class="project-preview">
+                <div class="project-images">
+                  <div class="project-image-top">
+                    <img src="images/project5.jpg" alt="Hair Salon" class="project-image" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22300%22%3E%3Crect fill=%22%23fef5f8%22 width=%22300%22 height=%22300%22/%3E%3Ctext fill=%22%23e91e8c%22 font-family=%22Arial%22 font-size=%2218%22 x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dominant-baseline=%22middle%22%3EProject Image 1%3C/text%3E%3C/svg%3E'">
+                  </div>
+                  <div class="project-image-bottom">
+                    <img src="images/project5-2.jpg" alt="Hair Salon" class="project-image" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22300%22%3E%3Crect fill=%22%23fef5f8%22 width=%22300%22 height=%22300%22/%3E%3Ctext fill=%22%23e91e8c%22 font-family=%22Arial%22 font-size=%2218%22 x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dominant-baseline=%22middle%22%3EProject Image 2%3C/text%3E%3C/svg%3E'">
+                  </div>
+                </div>
+                <span class="project-category">Product Designer</span>
+                <div class="project-actions">
+                  <a href="https://www.figma.com/proto/t1lrWXEaJfvyLNsaCLwJ6i/Hair-salon-booking-app?node-id=1-2&p=f&t=0vtDJRBB6P6dXizV-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A2" class="btn btn-sm btn-outline" target="_blank" rel="noopener noreferrer">Prototype</a>
+                </div>
+              </div>
+              <div class="project-details">
+                <h3>Hair Salon App Redesign</h3>
+                <p class="project-description">A redesigned digital experience for a local hair salon, focused on improving appointment booking, service discovery, and client retention through a clean, intuitive, and mobile-first interface.</p>
+                <p class="project-long">Built with a user-centered design approach, the platform streamlines the full customer journey—from viewing stylist portfolios to scheduling appointments and receiving personalized recommendations. The redesign enhances brand consistency while eliminating common user pain points like long booking flows, unclear pricing, and lack of availability insight.</p>
+                <div class="project-metrics">
+                  <div class="metric">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                    <div class="metric-value">Mobile-First</div>
+                    <div class="metric-label">Optimized UX/UI</div>
+                  </div>
+                  <div class="metric">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
+                    <div class="metric-value">40% Faster</div>
+                    <div class="metric-label">Booking Flow</div>
+                  </div>
+                  <div class="metric">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                    <div class="metric-value">Full Redesign</div>
+                    <div class="metric-label">Brand + User Journey</div>
+                  </div>
+                </div>
+                <div class="project-features">
+                  <h4>Key Features:</h4>
+                  <div class="features-grid">
+                    <div class="feature-item"><span class="feature-dot"></span>End-to-end booking system with real-time stylist availability</div>
+                    <div class="feature-item"><span class="feature-dot"></span>Stylist profiles with portfolios, specialties, and reviews</div>
+                    <div class="feature-item"><span class="feature-dot"></span>Accessibility-focused design for improved readability and navigation</div>
+                    <div class="feature-item"><span class="feature-dot"></span>User testing + iterative prototyping to validate design decisions</div>
+                  </div>
+                </div>
+                <div class="tech-tags">
+                  <span class="tech-tag">Figma</span>
+                  <span class="tech-tag">UX Research</span>
+                  <span class="tech-tag">UI Design</span>
+                  <span class="tech-tag">Prototyping</span>
+                  <span class="tech-tag">Interactive Design</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Resume Page -->
+      <div id="page-resume" class="page">
+        <div class="page-container">
+          <div class="page-header">
+            <h1 class="page-title"><span id="typing-resume"></span><span class="typing-cursor">|</span></h1>
+            <p class="page-subtitle">Like what you see? Download my full resume :0</p>
+            <a href="https://drive.google.com/file/d/1KG7Me1uFz4SmCdWivCrd4e17g9PpiARH/view?usp=sharing" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+              Download PDF Resume
+            </a>
+          </div>
+
+          <!-- Resume Images Collage -->
+          <div class="resume-images-section">
+            <div class="resume-image-collage">
+              <div class="resume-collage-item resume-collage-1 tilted-left">
+                <div class="flip-card">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                      <div class="photo-frame">
+                        <img src="images/resume1.jpg" alt="Resume Image 1" onerror="this.style.display='none'">
+                      </div>
+                    </div>
+                    <div class="flip-card-back">
+                      <div class="photo-frame">
+                        <div class="flip-card-content">
+                          <h3>Toronto, ON</h3>
+                          <p>I love exploring the city and finding new places to eat and drink 😋.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="resume-collage-item resume-collage-2 tilted-right">
+                <div class="flip-card">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                      <div class="photo-frame">
+                        <img src="images/resume2.jpg" alt="Resume Image 2" onerror="this.style.display='none'">
+                      </div>
+                    </div>
+                    <div class="flip-card-back">
+                      <div class="photo-frame">
+                        <div class="flip-card-content">
+                          <h3>Sandbanks, ON</h3>
+                          <p>I love the beach and spending time outside with friends and family 🌊.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="resume-collage-item resume-collage-3 tilted-left">
+                <div class="flip-card">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                      <div class="photo-frame">
+                        <img src="images/resume3.jpg" alt="Resume Image 3" onerror="this.style.display='none'">
+                      </div>
+                    </div>
+                    <div class="flip-card-back">
+                      <div class="photo-frame">
+                        <div class="flip-card-content">
+                          <h3>Greece, Athens</h3>
+                          <p>I love traveling and exploring new cultures and cuisines 🍝.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="resume-collage-item resume-collage-4 tilted-right">
+                <div class="flip-card">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                      <div class="photo-frame">
+                        <img src="images/resume4.jpg" alt="Resume Image 4" onerror="this.style.display='none'">
+                      </div>
+                    </div>
+                    <div class="flip-card-back">
+                      <div class="photo-frame">
+                        <div class="flip-card-content">
+                          <h3>Osheaga, Montreal</h3>
+                          <p>I love going to concerts and festivals. Experiencing music live 💋.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-content">
+        <p>
+          Made with <svg class="heart-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg> by Sophia Lu
+        </p>
+        <p class="footer-copyright">© 2025 All rights reserved</p>
+      </div>
   </footer>
+  </div>
 
   <script src="script.js"></script>
 </body>

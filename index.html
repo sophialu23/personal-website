@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <div id="cursor-glow" class="cursor-glow" aria-hidden="true"></div>
   <div class="min-h-screen relative">
     <!-- Floating Elements -->
     <div id="floating-elements" class="floating-elements"></div>
@@ -35,6 +36,10 @@
           <button class="nav-tab" data-tab="projects">
             <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
             <span>Projects</span>
+          </button>
+          <button class="nav-tab" data-tab="play" aria-label="Playground">
+            <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v3m0 12v3m9-9h-3M6 12H3m15.364 6.364l-2.121-2.121M6.757 6.757L4.636 4.636m14.728 0l-2.121 2.121M6.757 17.243l-2.121 2.121"></path></svg>
+            <span>Playground</span>
           </button>
           <button class="nav-tab" data-tab="resume">
             <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
@@ -161,20 +166,39 @@
           </div>
         </section>
 
+        <!-- Interactive explore -->
+        <section class="explore-section reveal">
+          <div class="container">
+            <h2 class="section-title">What catches your eye?</h2>
+            <p class="explore-hint">Tap a topic and I'll share something related.</p>
+            <div class="explore-chips" role="group" aria-label="Topics">
+              <button type="button" class="explore-chip" data-topic="design">Design</button>
+              <button type="button" class="explore-chip" data-topic="code">Code</button>
+              <button type="button" class="explore-chip" data-topic="impact">Social impact</button>
+              <button type="button" class="explore-chip" data-topic="skating">Figure skating</button>
+              <button type="button" class="explore-chip" data-topic="music">Music</button>
+            </div>
+            <div id="explore-result" class="explore-result" aria-live="polite">
+              <p class="explore-result-placeholder">Pick a topic above to get started ✨</p>
+            </div>
+            <p class="explore-more">Want more? Head to the <button type="button" class="link-button" data-goto-play>Playground</button> tab.</p>
+          </div>
+        </section>
+
         <!-- About Section -->
-        <section class="about-section">
+        <section class="about-section reveal">
           <div class="container">
             <h2 class="section-title">About Me</h2>
             <div class="about-grid">
-              <div class="about-card">
+              <div class="about-card reveal reveal-delay-1">
                 <h3>Background</h3>
                 <p>Systems Design Engineering student passionate about creating innovative solutions and bringing ideas to life through technology and design.</p>
               </div>
-              <div class="about-card">
+              <div class="about-card reveal reveal-delay-2">
                 <h3>Hobbies</h3>
-                <p>I love music, hanging out with friends, and playing sports. I'm also on the varsity figure skating team ;0.</p>
+                <p>I love music, hanging out with friends, and playing sports. I'm also on the varsity figure skating team :0.</p>
               </div>
-              <div class="about-card">
+              <div class="about-card reveal reveal-delay-3">
                 <h3>Passions</h3>
                 <p>Constantly learning new technologies and design trends. Currently exploring AI integration and web experiences.</p>
               </div>
@@ -183,7 +207,7 @@
   </section>
 
         <!-- Skills Section -->
-        <section class="skills-section">
+        <section class="skills-section reveal">
           <div class="container">
             <h2 class="section-title">Skills & Expertise</h2>
             <div class="skills-grid">
@@ -259,11 +283,51 @@
           <section class="experience-section">
             <h2 class="section-heading">Work Experience</h2>
             <div class="experience-list">
+
               <div class="experience-card">
                 <div class="experience-header">
                   <div>
-                    <h3>Shopify Software Engineer</h3>
-                    <p class="company">Symmetry Commerce</p>
+                    <h3>Software Engineering Intern</h3>
+                    <p class="company">Swift</p>
+                  </div>
+                  <div class="experience-meta">
+                    <div class="meta-item">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                      <span> Apr. 2026 - Present</span>
+                    </div>
+                    <div class="meta-item">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                      <span>Toronto, ON</span>
+                    </div>
+                  </div>
+                </div>
+                <p class="experience-description">Developed and optimized backend systems for a fast-growing sports SaaS platform serving 500+ facilities using
+                  Node.js, Next.js, and PostgreSQL</p>
+                <div class="achievements">
+                  <h4>Key Achievements:</h4>
+                  <ul>
+                    <li><span class="achievement-dot"></span>Built and deployed a redesigned homepage dashboard for Swift’s platform, improving usability and client workflows
+                      across systems supporting $250K+ monthly revenue</li>
+                    <li><span class="achievement-dot"></span>Implemented backend APIs, database queries, and performance optimizations to support scheduling, registration,
+                      and payment management systems</li>
+                    <li><span class="achievement-dot"></span>Built and optimized responsive, search-friendly web pages and UI prototypes, ensuring a cohesive brand experience across design and development.</li>
+                  </ul>
+                </div>
+                <div class="tech-tags">
+                  <span class="tech-tag">Node.js</span>
+                  <span class="tech-tag">Javascript</span>
+                  <span class="tech-tag">React</span>
+                  <span class="tech-tag">Figma</span>
+                  <span class="tech-tag">Next.js</span>
+                </div>
+              </div>
+
+
+              <div class="experience-card">
+                <div class="experience-header">
+                  <div>
+                    <h3>Software Engineering Intern</h3>
+                    <p class="company">Symmetry Commerce (Shopify Plus Partner)</p>
                   </div>
                   <div class="experience-meta">
                     <div class="meta-item">
@@ -298,7 +362,7 @@
               <div class="experience-card">
                 <div class="experience-header">
                   <div>
-                    <h3>Technical Project Manager</h3>
+                    <h3>Technical Project Manager Intern</h3>
                     <p class="company">napkin marketing</p>
                   </div>
                   <div class="experience-meta">
@@ -368,7 +432,7 @@
               <div class="experience-card">
                 <div class="experience-header">
                   <div>
-                    <h3>AI Business Developer</h3>
+                    <h3>AI Data Engineer</h3>
                     <p class="company">Series</p>
                   </div>
                   <div class="experience-meta">
@@ -386,7 +450,7 @@
                 <div class="achievements">
                   <h4>Key Achievements:</h4>
                   <ul>
-                    <li><span class="achievement-dot"></span>Worked closely with the CEO and founding team—two Yale University students whose startup was featured in Forbes as one of the fastest-growing student-led ventures—to strengthen alumni and community relationships.</li>
+                    <li><span class="achievement-dot"></span>Worked closely with the CEO and founding team (two Yale University students whose startup was featured in Forbes as one of the fastest-growing student-led ventures) to strengthen alumni and community relationships.</li>
                     <li><span class="achievement-dot"></span>Helped recruit 10+ additional participants by engaging Ivy League alumni and executing targeted outreach strategies.</li>
                     <li><span class="achievement-dot"></span>Drove marketing initiatives that introduced the program to 30+ students across diverse academic groups, increasing visibility and interest in the organization.</li>
     </ul>
@@ -440,6 +504,61 @@
           </div>
 
           <div class="projects-list">
+            <!-- Project 2 -->
+            <div class="project-card-large">
+              <div class="project-preview">
+                <div class="project-images">
+                  <div class="project-image-top">
+                    <img src="images/journy1.png" alt="UW reality labs" class="project-image" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22300%22%3E%3Crect fill=%22%23fef5f8%22 width=%22300%22 height=%22300%22/%3E%3Ctext fill=%22%23e91e8c%22 font-family=%22Arial%22 font-size=%2218%22 x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dominant-baseline=%22middle%22%3EProject Image 1%3C/text%3E%3C/svg%3E'">
+                  </div>
+                  <div class="project-image-bottom">
+                    <img src="images/journy2.png" alt="UW reality labs" class="project-image" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22300%22%3E%3Crect fill=%22%23fef5f8%22 width=%22300%22 height=%22300%22/%3E%3Ctext fill=%22%23e91e8c%22 font-family=%22Arial%22 font-size=%2218%22 x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dominant-baseline=%22middle%22%3EProject Image 2%3C/text%3E%3C/svg%3E'">
+                  </div>
+                </div>
+                <span class="project-category">CTO</span>
+                <div class="project-actions">
+                  <a href="https://github.com/DavidShihIsMe/JournyAI" class="btn btn-sm btn-outline" target="_blank" rel="noopener noreferrer">Github</a>
+                </div>
+              </div>
+              <div class="project-details">
+                <h3>JournyAI - Personalized AI Travel Planner</h3>
+                <p class="project-description">Founded and led JournyAI as CTO, architecting a full-stack AI travel planning platform generating personalized
+                  itineraries based on user identity and preferences, owning end-to-end product and system design</p>
+                <div class="project-metrics">
+                  <div class="metric">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                    <div class="metric-value">90%</div>
+                    <div class="metric-label">User Improvement</div>
+                  </div>
+                  <div class="metric">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                    <div class="metric-value">3 Core members</div>
+                    <div class="metric-label">Collaborative Team Effort</div>
+                  </div>
+                  <div class="metric">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
+                    <div class="metric-value">25%</div>
+                    <div class="metric-label">Reduced System Latency</div>
+                  </div>
+                </div>
+                <div class="project-features">
+                  <h4>Key Features:</h4>
+                  <div class="features-grid">
+                    <div class="feature-item"><span class="feature-dot"></span>AI-driven itinerary orchestration engine that dynamically optimizes multi-day travel plans in real time</div>
+                    <div class="feature-item"><span class="feature-dot"></span>Context-aware adaptation layer that recalibrates trips based on live signals (weather, delays, user behavior)</div>
+                    <div class="feature-item"><span class="feature-dot"></span>Unified travel execution pipeline integrating bookings across flights, accommodations, and activities</div>
+                    <div class="feature-item"><span class="feature-dot"></span>Personalized recommendation system leveraging user preferences and global travel data to surface high-signal experiences</div>
+                  </div>
+                </div>
+                <div class="tech-tags">
+                  <span class="tech-tag">Typescript</span>
+                  <span class="tech-tag">Javascript</span>
+                  <span class="tech-tag">React</span>
+                  <span class="tech-tag">Node.js</span>
+                </div>
+              </div>
+            </div>
+
             <!-- Project 1 -->
             <div class="project-card-large">
               <div class="project-preview">
@@ -457,9 +576,9 @@
                 </div>
               </div>
               <div class="project-details">
-                <h3>ELDA — Elderly Learning Digital Assistant</h3>
+                <h3>ELDA · Elderly Learning Digital Assistant</h3>
                 <p class="project-description">A real-time multimodal voice assistant that combines speech recognition, natural language reasoning, and dynamic voice output to enable fast and accurate hands-free interactions.</p>
-                <p class="project-long">Developed as a cross-platform Electron application with a React interface, ELDA demonstrates end-to-end system design—from low-latency audio processing to AI-driven decision-making and accessibility-focused UX. The system achieves 95% command accuracy across 50+ tested interactions, showcasing robust back-end engineering and seamless multimodal integration.</p>
+                <p class="project-long">Developed as a cross-platform Electron application with a React interface, ELDA demonstrates end-to-end system design, from low-latency audio processing to AI-driven decision-making and accessibility-focused UX. The system achieves 95% command accuracy across 50+ tested interactions, showcasing robust back-end engineering and seamless multimodal integration.</p>
                 <div class="project-metrics">
                   <div class="metric">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
@@ -513,7 +632,7 @@
                 </div>
               </div>
               <div class="project-details">
-                <h3>Humanoid VR Robot — UW Reality Labs</h3>
+                <h3>Humanoid VR Robot · UW Reality Labs</h3>
                 <p class="project-description">A human-like robotic system designed to blend physical motion with immersive VR control, enabling natural, precise, and responsive full-body interaction between humans and machines..</p>
                 <p class="project-long">Built in collaboration with a 12-person engineering team, this prototype integrates advanced motion control, perception pipelines, and real-time sensor fusion. Through optimized embedded modules and control algorithms, the system achieved 30% higher movement precision and 25% lower latency, significantly improving real-time responsiveness.</p>
                 <div class="project-metrics">
@@ -568,7 +687,7 @@
                 </div>
               </div>
               <div class="project-details">
-                <h3>Focus Royale — Productivity Betting Web App</h3>
+                <h3>Focus Royale · Productivity Betting Web App</h3>
                 <p class="project-description">A crypto-powered productivity platform where users “bet on themselves” to stay focused. By staking tokens and locking in distraction-free sessions, Focus Royale motivates users through commitment, accountability, and real-time progress tracking.</p>
                 <p class="project-long">Built during a hackathon, the app integrates Solana for secure token transactions and Gemini for user authentication and account management. The system combines a Node.js backend with a React + Tailwind CSS frontend to deliver fast, sleek, and reliable user experiences across devices.</p>
                 <div class="project-metrics">
@@ -625,7 +744,7 @@
                 <span class="project-category">Front End Developer / Data Commissioner</span>
               </div>
               <div class="project-details">
-                <h3>Engineering Society — Data Commissioner & Web Developer</h3>
+                <h3>Engineering Society · Data Commissioner & Web Developer</h3>
                 <p class="project-description">A dual-impact role combining data analytics and front-end development to support strategic decision-making and modernize digital experiences across the Engineering Society. This work bridges technical reporting, user-focused web design, and operational insights to elevate student engagement and organizational efficiency.</p>
                 <p class="project-long">By analyzing over 10,000+ data points and redesigning core web pages used by thousands of engineering students, the role enhances transparency, accessibility, and the overall digital ecosystem for the society.</p>
                 <div class="project-metrics">
@@ -681,8 +800,8 @@
                 <span class="project-category">Full Stack</span>
               </div>
               <div class="project-details">
-                <h3>SkateBot AI — Personalized Figure Skating Coaching Assistant</h3>
-                <p class="project-description">An AI-powered coaching platform that helps figure skaters improve their technique by analyzing skills, identifying common mistakes, and delivering tailored training suggestions—all without needing an in-person coach.</p>
+                <h3>SkateBot AI · Personalized Figure Skating Coaching Assistant</h3>
+                <p class="project-description">An AI-powered coaching platform that helps figure skaters improve their technique by analyzing skills, identifying common mistakes, and delivering tailored training suggestions, all without needing an in-person coach.</p>
                 <p class="project-long">Designed to make skating more accessible, SkateBot AI supports skaters of all levels by translating complex coaching knowledge into simple, actionable feedback. Users can log skills, track progress, and receive personalized drills powered by domain-specific reasoning models.</p>
                 <div class="project-metrics">
                   <div class="metric">
@@ -734,9 +853,9 @@
                 </div>
               </div>
               <div class="project-details">
-                <h3>HobbyHive — Hobby Connecting App </h3>
+                <h3>HobbyHive · Hobby Connecting App</h3>
                 <p class="project-description">A social platform that helps people start, grow, and stay committed to their hobbies by connecting them with beginner-friendly classes, local groups, and experienced community members. HobbyHive makes learning accessible by pairing structured guidance with real human support.</p>
-                <p class="project-long">Designed as a full-stack web app, HobbyHive allows users to explore curated hobby paths, track progress, book intro sessions, and engage with mentors or peers. The platform focuses on accessibility, motivation, and lowering the barrier to trying something new—whether that’s pottery, coding, skating, or photography.</p>
+                <p class="project-long">Designed as a full-stack web app, HobbyHive allows users to explore curated hobby paths, track progress, book intro sessions, and engage with mentors or peers. The platform focuses on accessibility, motivation, and lowering the barrier to trying something new, whether that’s pottery, coding, skating, or photography.</p>
                 <div class="project-metrics">
                   <div class="metric">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
@@ -792,7 +911,7 @@
               <div class="project-details">
                 <h3>Hair Salon App Redesign</h3>
                 <p class="project-description">A redesigned digital experience for a local hair salon, focused on improving appointment booking, service discovery, and client retention through a clean, intuitive, and mobile-first interface.</p>
-                <p class="project-long">Built with a user-centered design approach, the platform streamlines the full customer journey—from viewing stylist portfolios to scheduling appointments and receiving personalized recommendations. The redesign enhances brand consistency while eliminating common user pain points like long booking flows, unclear pricing, and lack of availability insight.</p>
+                <p class="project-long">Built with a user-centered design approach, the platform streamlines the full customer journey, from viewing stylist portfolios to scheduling appointments and receiving personalized recommendations. The redesign enhances brand consistency while eliminating common user pain points like long booking flows, unclear pricing, and lack of availability insight.</p>
                 <div class="project-metrics">
                   <div class="metric">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
@@ -838,14 +957,14 @@
           <div class="page-header">
             <h1 class="page-title"><span id="typing-resume"></span><span class="typing-cursor">|</span></h1>
             <p class="page-subtitle">Like what you see? Download my full resume :0</p>
-            <a href="https://drive.google.com/file/d/1KG7Me1uFz4SmCdWivCrd4e17g9PpiARH/view?usp=sharing" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+            <a href="https://drive.google.com/file/d/1brNNHeB8YfX18CpPsK9VAPf1_0ZbLOA6/view?usp=sharing" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
               Download PDF Resume
             </a>
           </div>
 
           <!-- Resume Images Collage -->
-          <div class="resume-images-section">
+          <div class="resume-images-section"> 
             <div class="resume-image-collage">
               <div class="resume-collage-item resume-collage-1 tilted-left">
                 <div class="flip-card">
@@ -927,6 +1046,71 @@
           </div>
         </div>
       </div>
+
+      <!-- Play Page -->
+      <div id="page-play" class="page">
+        <div class="page-container">
+          <div class="page-header">
+            <h1 class="page-title"><span id="typing-play"></span><span class="typing-cursor">|</span></h1>
+            <p class="page-subtitle">Click, spin, and experiment. No homework required.</p>
+          </div>
+
+          <section class="play-section reveal">
+            <h2 class="section-heading">Vibe studio</h2>
+            <p class="play-desc">Repaint the whole site with one tap. Your pick sticks until you refresh.</p>
+            <div class="mood-grid" role="group" aria-label="Color moods">
+              <button type="button" class="mood-card active" data-mood="blush" style="--mood-swatch: #e91e8c">
+                <span class="mood-swatch"></span>
+                <span class="mood-name">Blush</span>
+              </button>
+              <button type="button" class="mood-card" data-mood="mint" style="--mood-swatch: #5eb8b0">
+                <span class="mood-swatch"></span>
+                <span class="mood-name">Mint dream</span>
+              </button>
+              <button type="button" class="mood-card" data-mood="lavender" style="--mood-swatch: #9b6db8">
+                <span class="mood-swatch"></span>
+                <span class="mood-name">Lavender haze</span>
+              </button>
+              <button type="button" class="mood-card" data-mood="sunset" style="--mood-swatch: #e87d5a">
+                <span class="mood-swatch"></span>
+                <span class="mood-name">Sunset</span>
+              </button>
+            </div>
+          </section>
+
+          <section class="play-section reveal">
+            <h2 class="section-heading">Spin a Sophia fact</h2>
+            <p class="play-desc">Hit the button and the slot machine will land on something random about me.</p>
+            <div class="fact-machine">
+              <div id="fact-display" class="fact-display">
+                <p>Ready when you are 🎰</p>
+              </div>
+              <button type="button" id="fact-spin-btn" class="btn btn-primary fact-spin-btn">
+                <span class="fact-spin-label">Spin!</span>
+              </button>
+            </div>
+          </section>
+
+          <section class="play-section reveal">
+            <h2 class="section-heading">Sticker board</h2>
+            <p class="play-desc">Pick a sticker, then click anywhere on the board to place it. Drag stickers to rearrange.</p>
+            <div class="sticker-palette" role="group" aria-label="Stickers">
+              <button type="button" class="sticker-btn" data-sticker="⭐" aria-label="Star">⭐</button>
+              <button type="button" class="sticker-btn" data-sticker="💗" aria-label="Heart">💗</button>
+              <button type="button" class="sticker-btn" data-sticker="🎵" aria-label="Music">🎵</button>
+              <button type="button" class="sticker-btn" data-sticker="⛸️" aria-label="Skate">⛸️</button>
+              <button type="button" class="sticker-btn" data-sticker="💻" aria-label="Laptop">💻</button>
+              <button type="button" class="sticker-btn" data-sticker="✨" aria-label="Sparkles">✨</button>
+              <button type="button" class="sticker-btn" data-sticker="🌸" aria-label="Flower">🌸</button>
+              <button type="button" class="sticker-btn" data-sticker="☕" aria-label="Coffee">☕</button>
+            </div>
+            <div id="sticker-board" class="sticker-board" tabindex="0">
+              <p class="sticker-board-hint">Select a sticker, then click here</p>
+            </div>
+            <button type="button" id="sticker-clear" class="btn btn-outline sticker-clear-btn">Clear board</button>
+          </section>
+        </div>
+      </div>
     </main>
 
     <!-- Footer -->
@@ -941,5 +1125,6 @@
   </div>
 
   <script src="script.js"></script>
+  <script src="interactive.js"></script>
 </body>
 </html>

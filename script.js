@@ -84,7 +84,8 @@ function initPageTitleTyping(page) {
   const pageTexts = {
     'experience': 'Experience',
     'projects': 'Projects',
-    'resume': 'Resume'
+    'resume': 'Resume',
+    'play': 'Playground'
   };
   
   const elementId = `typing-${page}`;
